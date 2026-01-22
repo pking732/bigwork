@@ -1,0 +1,127 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: all var(--transition-base);
+}
+
+.header--scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  gap: var(--spacing-xl);
+}
+
+.header__logo {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.header__logo:hover {
+  color: var(--color-primary-dark);
+}
+
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.header__nav-link {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+  padding: var(--spacing-sm) 0;
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-base);
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+  color: var(--color-primary);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link--active::after {
+  width: 100%;
+}
+
+.header__menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  color: var(--color-black);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.header__menu-button:hover {
+  color: var(--color-primary);
+}
+
+.header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-light);
+  padding: var(--spacing-md) 0;
+  overflow: hidden;
+}
+
+.header__mobile-nav-link {
+  display: block;
+  padding: var(--spacing-md) var(--container-padding);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.header__mobile-nav-link:hover,
+.header__mobile-nav-link--active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    display: flex;
+  }
+
+  .header__menu-button {
+    display: none;
+  }
+
+  .header__mobile-nav {
+    display: none;
+  }
+}
