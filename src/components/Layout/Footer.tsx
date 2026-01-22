@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, FileText } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,12 +11,6 @@ const Footer = () => {
     { path: '/about', label: 'О нас' },
     { path: '/portfolio', label: 'Портфолио' },
     { path: '/contacts', label: 'Контакты' },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, url: '#', label: 'Facebook' },
-    { icon: Instagram, url: '#', label: 'Instagram' },
-    { icon: Linkedin, url: '#', label: 'LinkedIn' },
   ];
 
   return (
@@ -57,27 +51,10 @@ const Footer = () => {
                 <MapPin size={18} />
                 <span>Иркутская область</span>
               </div>
-            </div>
-          </div>
-
-          <div className="footer__section">
-            <h4 className="footer__subtitle">Социальные сети</h4>
-            <div className="footer__social">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.url}
-                    className="footer__social-link"
-                    aria-label={social.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon size={20} />
-                  </a>
-                );
-              })}
+              <div className="footer__contact-item">
+                <FileText size={18} />
+                <span>ИНН 382007536795</span>
+              </div>
             </div>
           </div>
         </div>
